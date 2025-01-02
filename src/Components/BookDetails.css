@@ -1,0 +1,4 @@
+.bookDetails{
+    display: flex;
+    column-gap: 4rem;
+}
