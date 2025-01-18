@@ -11,7 +11,8 @@ function App() {
   const [bookData,setBookData] = useState({
     title: "",
     author:"",
-    publisher:""
+    publisher:"",
+    publication_date:""
   })
   const [editingID,setEditingID] = useState('')
   // fetch('https://freetestapi.com/api/v1/books?limit=5').then((res)=>res.json()).then((data)=>{

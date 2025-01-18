@@ -3,7 +3,7 @@ export default [
       "id": 1,
       "title": "To Kill a Mockingbird",
       "author": "Harper Lee",
-      "publication_year": 1960,
+      "publication_date": new Date(),
       "publisher":'Thomas james',
       "genre": [
         "Fiction",
@@ -16,7 +16,7 @@ export default [
       "id": 2,
       "title": "1984",
       "author": "George Orwell",
-      "publication_year": 1949,
+      "publication_date": new Date(),
       "publisher":'Thomas james',
       "genre": [
         "Dystopian",
@@ -29,7 +29,7 @@ export default [
       "id": 3,
       "title": "Pride and Prejudice",
       "author": "Jane Austen",
-      "publication_year": 1813,
+      "publication_date": new Date(),
       "publisher":'Thomas james',
       "genre": [
         "Classic",
@@ -42,7 +42,7 @@ export default [
       "id": 4,
       "title": "The Great Gatsby",
       "author": "F. Scott Fitzgerald",
-      "publication_year": 1925,
+      "publication_date": new Date(),
       "publisher":'Thomas james',
       "genre": [
         "Fiction",
@@ -55,7 +55,7 @@ export default [
       "id": 5,
       "title": "Moby-Dick",
       "author": "Herman Melville",
-      "publication_year": 1851,
+      "publication_date": new Date(),
       "publisher":'Thomas james',
       "genre": [
         "Fiction",

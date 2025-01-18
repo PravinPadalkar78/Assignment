@@ -7,7 +7,7 @@ export default function BooksForm({
   editingID,
   setEditingID,
 }) {
-
+  console.log(bookData)
   const [errorData,setErrorData] = useState({})
   const handleChange = (event, key) => {
     setBookData((prevState) => ({ ...prevState, [key]: event.target.value }));
@@ -27,6 +27,12 @@ export default function BooksForm({
     {
       error = {...error , publisher:'publisher Should be minimum 5 char long '}
     }
+    // if(formData.publication_date.substring(0,4)<)
+    if(formData.publication_date.substring(0,4)<2020)
+    {
+      error = {...error , date:'Date should be after 2020 '}
+    }
+    console.log( typeof formData.publication_date)
     setErrorData(error)
     return error
     
@@ -48,7 +54,7 @@ export default function BooksForm({
           return curr;
         })
       );
-      setBookData({ title: "", author: "", publisher: "" });
+      setBookData({ title: "", author: "", publisher: "",publication_date:"" });
       setEditingID("");
     } else {
       setBooksData((prevState) => [
@@ -66,6 +72,7 @@ export default function BooksForm({
           type="text"
           name="title"
           id="title"
+          
           value={bookData.title}
           onChange={(e) => handleChange(e, "title")}
         />
@@ -78,6 +85,7 @@ export default function BooksForm({
           name="author"
           id="author"
           value={bookData.author}
+          
           onChange={(e) => handleChange(e, "author")}
         />
         <p className="error" >{errorData.author}</p>
@@ -89,9 +97,22 @@ export default function BooksForm({
           id="publisher"
           name="publisher"
           value={bookData.publisher}
+          
           onChange={(e) => handleChange(e, "publisher")}
         />
         <p className="error"> {errorData.publisher}</p>
+      </div>
+      <div className="input-group">
+        <label htmlFor="date_of_publish">Date</label>
+        <input
+          id="date_of_publish"
+          name="date_of_publish"
+          value={bookData.publication_date}
+          
+          type="date"
+          onChange={(e) => handleChange(e, "publication_date")}
+        />
+           <p className="error"> {errorData.date}</p>
       </div>
       <div className="input-group">
         <button className="add-btn" type="submit">
